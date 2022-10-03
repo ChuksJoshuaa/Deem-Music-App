@@ -1,6 +1,6 @@
 # Project Lyrics
 
-Develop an S-cam React.js Music Application. 
+Develop an Deem React.js Music Application. 
 
 # Contributing
 
@@ -47,13 +47,13 @@ To set up a development environment, please follow these steps:
 1. Clone the repo
 
    ```shell
-    git clone https://github.com/ChuksJoshuaa/S-cam-Music-App.git
+    git clone https://github.com/ChuksJoshuaa/Deem-Music-App.git
    ```
 
 2. Change directory to the project directory
 
     ```shell
-    cd s-cam music app
+    cd deem-music-app
     ```
 
 3. Install the dependencies
@@ -117,7 +117,7 @@ Here we are going to focus on 2. Creating a Topical Branch:
 
 3. To create a pull request, you must have changes committed to your new branch.
 
-4. Go to [Pull Requests](https://github.com/ChuksJoshuaa/S-cam-Music-App.git) and click on the `New Pull Request` button.
+4. Go to [Pull Requests](https://github.com/ChuksJoshuaa/Deem-Music-App.git) and click on the `New Pull Request` button.
 
 5. Select the `main` branch as the `base` branch 
 
