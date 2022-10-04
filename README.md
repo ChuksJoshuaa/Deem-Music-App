@@ -1,6 +1,6 @@
 # Project Lyrics
 
-Develop an Deem React.js Music Application. 
+Develope a Deem React.js Music Application. 
 
 # Contributing
 
