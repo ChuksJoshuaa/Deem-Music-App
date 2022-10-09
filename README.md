@@ -1,5 +1,7 @@
 # Project Lyrics
 
+<img src="https://res.cloudinary.com/chuksmbanaso/image/upload/v1665311915/media/Screenshot_268_iuds4m.png" title="icon" alt="icon">
+
 Develope a Deem React.js Music Application. 
 
 # Contributing
