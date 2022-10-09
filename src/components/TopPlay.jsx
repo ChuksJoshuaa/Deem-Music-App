@@ -22,7 +22,7 @@ const TopPlay = () => {
     return (
       <>
         <div
-          className='w-full flex flex-col items-center hover:bg-[#4c426e] 
+          className='w-full flex flex-row items-center hover:bg-[#4c426e] 
             py-2 p-4 rounded-lg cursor-pointer mb-2'>
           {song?.title}
        </div>
@@ -65,6 +65,15 @@ const TopPlay = () => {
            ))}
         </div>
     </div>
+
+      <div className='w-full flex flex-col mt-8'>
+        <div className='flex flex-row justify-between'>
+          <h2 className="text-white font-bold text-2xl">Top Artists</h2>
+          <Link to="/top-artists">
+           <p className='text-gray-300 text-base cursor-pointer'>See more</p>
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
