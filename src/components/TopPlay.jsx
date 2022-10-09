@@ -18,7 +18,7 @@ const TopPlay = () => {
 
   const topPlays = data?.slice(0, 5)
 
-  const TopChartCard = ({ song, i}) => {
+  const TopChartCard = ({ song, i, isPlaying, activeSong, handlePauseClick, handlePlayClick}) => {
     return (
       <>
         <div
@@ -34,12 +34,18 @@ const TopPlay = () => {
               <Link to={`/songs/${song.key}`}>
                 <p className='text-xl font-bold text-white'>{song?.title}</p>
               </Link>
-
               <Link to={`/artists/${song?.artists[0].adamid}`}>
                 <p className='text-ase font-bold text-gray-300 mt-1'>{song?.subtitle}</p>
               </Link>
             </div>
           </div>
+          <PlayPause 
+            isPlaying={isPlaying}
+            activeSong={activeSong}
+            song={song}
+            handlePause={handlePauseClick}
+            handlePlay={handlePlayClick}
+          />
        </div>
       </>
     )
@@ -53,7 +59,7 @@ const TopPlay = () => {
     dispatch(playPause(false))
   }
 
-  const handlePlayClick = () => {
+  const handlePlayClick = (song, i) => {
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true))
   }
@@ -74,6 +80,10 @@ const TopPlay = () => {
           {topPlays?.map((song, i) => (
             <TopChartCard 
               key={song.key}
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+              handlePauseClick={handlePauseClick}
+              handlePlayClick={() => handlePlayClick(song, i)}
               song={song}
               i={i}
             />
