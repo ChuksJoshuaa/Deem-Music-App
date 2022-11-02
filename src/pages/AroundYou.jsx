@@ -3,13 +3,13 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 
 import { Error, Loader, SongCard } from "../components";
+import { useGetSongsByCountryQuery } from "../redux/services/shazamCore";
 
 const CountryTracks = () => {
   const [country, setCountry] = useState("");
   const [loading, setLoading] = useState(true);
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-
-  console.log(country);
+  const { isFetching, data, error } = useGetSongsByCountryQuery(country);
 
   const fetchCountry = async () => {
     axios
@@ -26,7 +26,32 @@ const CountryTracks = () => {
     fetchCountry();
   }, [country]);
 
-  return <div></div>;
+  if (isFetching && loading) return <Loader title="loading song around you" />;
+
+  if (error && country) return <Error />;
+
+  return (
+    <div className="flex flex-col">
+      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">
+        Around You
+        <span className="font-bold"> ({country})</span>
+      </h2>
+      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+        {data?.map((song, i) => (
+          <>
+            <SongCard
+              key={`${song.key} - ${i}`}
+              song={song}
+              isPlaying={isPlaying}
+              activeSong={activeSong}
+              data={data}
+              i={i}
+            />
+          </>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default CountryTracks;
