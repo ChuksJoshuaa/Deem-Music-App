@@ -11,9 +11,7 @@ const ArtistDetails = () => {
     data: artistData,
     isFetching: isFetchingArtistDetails,
     error,
-  } = useGetArtistDetailsQuery(artistId);
-
-  console.log(artistData);
+  } = useGetArtistDetailsQuery({ artistId });
 
   if (isFetchingArtistDetails) {
     return (

@@ -25,7 +25,7 @@ export const shazamCoreApi = createApi({
     }),
 
     getArtistDetails: builder.query({
-      query: (artistId) => `/artists/details?artist_id=${artistId}`,
+      query: ({ artistId }) => `/artists/details?artist_id=${artistId}`,
     }),
   }),
 });

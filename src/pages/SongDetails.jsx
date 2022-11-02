@@ -21,8 +21,6 @@ const SongDetails = () => {
     error,
   } = useGetSongRelatedQuery({ songid });
 
-  console.log(data);
-
   const handlePauseClick = () => {
     dispatch(playPause(false));
   };
