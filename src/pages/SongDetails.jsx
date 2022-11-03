@@ -10,6 +10,7 @@ import {
 
 const SongDetails = () => {
   const dispatch = useDispatch();
+  const randy = () => Math.floor(Math.random() * 1000000);
   const { songid } = useParams();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data: songData, isFetching: isFetchingSongDetails } =
@@ -50,7 +51,11 @@ const SongDetails = () => {
         <div className="mt-5">
           {songData?.sections[1].type === "LYRICS" ? (
             songData?.sections[1].text.map((line, i) => (
-              <p key={i} i={i} className="text-gray-400 text-base my-1">
+              <p
+                key={`${randy()}-${line}-${i}`}
+                i={i}
+                className="text-gray-400 text-base my-1"
+              >
                 {line}
               </p>
             ))

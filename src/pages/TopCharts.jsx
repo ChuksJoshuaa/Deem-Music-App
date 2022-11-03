@@ -21,7 +21,7 @@ const TopCharts = () => {
         {data?.map((song, i) => (
           <>
             <SongCard
-              key={`${song.key}-${i}`}
+              key={song.key}
               song={song}
               isPlaying={isPlaying}
               activeSong={activeSong}
