@@ -6,7 +6,7 @@ Develope a Deem React.js Music Application.
 
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue.
+When contributing to this repository, please first discuss the change you wish to make via issue..
 
 ## System Requirements
 
